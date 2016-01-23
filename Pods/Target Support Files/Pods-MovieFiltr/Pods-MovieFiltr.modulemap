@@ -1,0 +1,6 @@
+framework module Pods_MovieFiltr {
+  umbrella header "Pods-MovieFiltr-umbrella.h"
+
+  export *
+  module * { export * }
+}
