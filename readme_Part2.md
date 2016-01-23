@@ -1,6 +1,6 @@
 # Project  - *MovieFiltrApp*
 
-**MovieFiltrApp** is a movies app displaying box office , top rental DVDs and Tv Showa using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+**MovieFiltrApp** is a movies app displaying box office , top rental DVDs and Tv Shows using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
 
 
@@ -67,7 +67,13 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 - the user can switch back and forth between Movies and Tv show view
-- Split icons   appear and  disapear according to the number of person the bill can be split with
+- Split icons  appear and  disapear according to the number of person the bill can be split with
+
+##Futur work
+- user will have access to other api such as rotten tometoes to post or access reviews 
+- user will have access to the showtime location 
+- user will be able to order ticket onine 
+
 
 ## License
 
