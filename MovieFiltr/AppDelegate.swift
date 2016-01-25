@@ -19,6 +19,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        //access the storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //crreate a navigation controller by creating a view controller on the storyboard and cast as  navigation controller
+        let TvNavigationController = storyboard.instantiateViewControllerWithIdentifier("MoviesNavigationController") as! UINavigationController
+        let TvViewController = TvNavigationController.topViewController as! MovieViewController
+         TvViewController.secondEndPoint = "tv"
+        TvNavigationController.tabBarItem.title = "Tv Show"
+        TvNavigationController .tabBarItem.image = UIImage(named: "IconSmallTvShow")
+        
+        
+        let MovNavigationController = storyboard.instantiateViewControllerWithIdentifier("MoviesNavigationController") as! UINavigationController
+        let MovViewController = MovNavigationController.topViewController as! MovieViewController
+        MovViewController.secondEndPoint = "movie"
+        MovNavigationController.tabBarItem.title = "Movies"
+        MovNavigationController.tabBarItem.image = UIImage(named: "Icon-Small_video")
+
+        
+        let tabBarController =  UITabBarController()
+        tabBarController.viewControllers = [MovNavigationController, TvNavigationController]
+        UITabBar.appearance().barTintColor = UIColor.blackColor()
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
+        //add tite to tabBar
+    
+        
+        
+        
 //        //modifie the header of the navigation view controller
        UINavigationBar.appearance().barTintColor = UIColor(red: 63/255.0, green:
            74/255.0, blue: 191/255.0, alpha: 1.0)

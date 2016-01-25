@@ -29,7 +29,7 @@ class MovieDetailsViewController: UIViewController {
         
         
         //set view of the navigaiton controller
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:
+      navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:
             .Plain, target: nil, action: nil)
         
         title = MovieOfDetailsView.title

@@ -14,7 +14,8 @@ class MovieCollectionViewController: UIViewController, UICollectionViewDelegate,
     var LoadedCollectionMovies: [Movie] = []
     var moviesC : [NSDictionary]?
     var OneCollectionMovie : Movie!
-    
+    var SecondEndPoint : String!
+    var headTitleCollection : [String] = ["Movies","Tv Shows"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,18 @@ class MovieCollectionViewController: UIViewController, UICollectionViewDelegate,
         collectionView .dataSource = self
         collectionView.delegate = self
        // set LoadedCollectionMovies
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:
+            .Plain, target: nil, action: nil)
+        
+       
+        
+        
+   if(self.SecondEndPoint == "movie"){
+        
+            title = headTitleCollection[0]
+   
+    
+    
         for (var i = 0; i < self.moviesC?.count;i++){
             
             
@@ -39,11 +52,50 @@ class MovieCollectionViewController: UIViewController, UICollectionViewDelegate,
             
             
           self.LoadedCollectionMovies.append(Movie(title: self.moviesC![i]["title"] as! String, overview: self.moviesC![i]["overview"] as! String, imageCell: dumy, releaseDate: self.moviesC![i]["release_date"] as! String, numberOfView : self.moviesC![i]["popularity"] as! Double, Rating : self.moviesC![i]["vote_average"] as! Double))
+            
+            
+            
+       
+    }//end for loop
+    
+    
         }
+        
+        
+        if(self.SecondEndPoint == "tv"){
+            
+            title = headTitleCollection[1]
+            
+            for (var i = 0; i < self.moviesC?.count;i++){
+                
+                
+                var dumy = ""
+                if let posterPath = self.moviesC![i]["poster_path"] as? String {
+                    
+                    dumy = self.moviesC![i]["poster_path"] as! String
+                }
+                else {
+                    // No poster image. Can either set to nil (no image) or a default movie poster image
+                    // that you include as an asset
+                    dumy = "none"
+                }
+                
+                
+                
+                self.LoadedCollectionMovies.append(Movie(title: self.moviesC![i]["name"] as! String, overview: self.moviesC![i]["overview"] as! String, imageCell: dumy, releaseDate: self.moviesC![i]["first_air_date"] as! String, numberOfView : self.moviesC![i]["popularity"] as! Double, Rating : self.moviesC![i]["vote_average"] as! Double))
+                
+            }//end for loop
+            
+            
+        }
+
+        
+        
+        
         
             
 
-
+    
         //set the datasource
       //  collectionView.dataSource = self
         

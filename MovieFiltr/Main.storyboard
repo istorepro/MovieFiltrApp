@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1zZ-xg-jHB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="v9s-OC-xST">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -21,11 +21,11 @@
                                 <rect key="frame" x="0.0" y="33" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.0047841333170644193" green="0.014933979608861888" blue="0.067101603403141308" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="159" id="yPa-gR-ScL" customClass="MovieTableViewCell" customModule="MovieFiltr" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="159" id="yPa-gR-ScL" customClass="MovieTableViewCell" customModule="MovieFiltr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="center" tableViewCell="yPa-gR-ScL" id="Xtq-qQ-SGc">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iE0-I2-RYo">
@@ -73,55 +73,55 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qCH-cZ-Zoo">
-                                <rect key="frame" x="223" y="98" width="97" height="85"/>
+                                <rect key="frame" x="178" y="98" width="142" height="85"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUi-xp-cbp">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="33"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <state key="normal" title="Now playing">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <state key="normal">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="showNowPlaying:" destination="MBL-Xm-7fl" eventType="touchUpInside" id="cav-Qa-VzF"/>
+                                            <action selector="showButtonA:" destination="MBL-Xm-7fl" eventType="touchUpInside" id="Hb3-Mo-YKX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4G1-fI-RaT">
-                                        <rect key="frame" x="0.0" y="58" width="97" height="27"/>
+                                        <rect key="frame" x="0.0" y="58" width="142" height="27"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <state key="normal" title="Up comming">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <state key="normal">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="showUpcomingMovies:" destination="MBL-Xm-7fl" eventType="touchUpInside" id="Yjq-Pw-g1s"/>
+                                            <action selector="showButtonB:" destination="MBL-Xm-7fl" eventType="touchUpInside" id="0Xi-WR-U3U"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQM-Eg-X2J">
-                                        <rect key="frame" x="0.0" y="28" width="97" height="30"/>
+                                        <rect key="frame" x="0.0" y="28" width="142" height="30"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <state key="normal" title="Top Rated">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <state key="normal">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="showTopRatedMovies:" destination="MBL-Xm-7fl" eventType="touchUpInside" id="PBD-I8-Dt0"/>
+                                            <action selector="showButtonC:" destination="MBL-Xm-7fl" eventType="touchUpInside" id="1ip-8e-dhO"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tL6-cG-FfA">
-                                        <rect key="frame" x="0.0" y="53" width="97" height="2"/>
+                                        <rect key="frame" x="0.0" y="55" width="142" height="2"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sfs-QT-qf1">
-                                        <rect key="frame" x="0.0" y="28" width="97" height="2"/>
+                                        <rect key="frame" x="0.0" y="28" width="142" height="2"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkE-7q-F1r">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="4"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="4"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VRA-Vb-K0p">
-                                        <rect key="frame" x="0.0" y="81" width="97" height="4"/>
+                                        <rect key="frame" x="0.0" y="81" width="142" height="4"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -129,6 +129,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBv-fv-7OK">
                                 <rect key="frame" x="203" y="71" width="32" height="22"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
                                 <state key="normal" image="Icon-40.png">
@@ -136,6 +137,7 @@
                                 </state>
                                 <connections>
                                     <action selector="dislpayFilterView:" destination="MBL-Xm-7fl" eventType="touchUpInside" id="HAA-VN-zZe"/>
+                                    <outletCollection property="gestureRecognizers" destination="1CR-uP-zzV" appends="YES" id="ghp-fq-JgK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -156,14 +158,22 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttonA" destination="xUi-xp-cbp" id="4vt-Fg-17j"/>
+                        <outlet property="buttonB" destination="4G1-fI-RaT" id="WeT-f9-7J4"/>
+                        <outlet property="buttonC" destination="GQM-Eg-X2J" id="2Iq-VW-Rkf"/>
                         <outlet property="filterView" destination="qCH-cZ-Zoo" id="P41-x1-aS3"/>
                         <outlet property="labelfiltertypeOfMovie" destination="1Tz-1D-PNV" id="kkC-oj-y2s"/>
                         <outlet property="tableView" destination="4zv-He-s8t" id="yNj-zI-aGV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSe-qK-R9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1CR-uP-zzV">
+                    <connections>
+                        <action selector="dislpayFilterView:" destination="MBL-Xm-7fl" id="RD7-Jj-w1t"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1678" y="279"/>
+            <point key="canvasLocation" x="1713.0666666666666" y="117.38666666666667"/>
         </scene>
         <!--Movie Details View Controller-->
         <scene sceneID="utn-3A-puG">
@@ -248,52 +258,6 @@
             </objects>
             <point key="canvasLocation" x="2109" y="259"/>
         </scene>
-        <!--Tv Show-->
-        <scene sceneID="A6r-bu-uGH">
-            <objects>
-                <tableViewController id="Uc4-Nh-O6b" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2MC-zQ-a3C">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="L9h-N3-lZd">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L9h-N3-lZd" id="jGd-Fz-3QG">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Uc4-Nh-O6b" id="knQ-at-tT8"/>
-                            <outlet property="delegate" destination="Uc4-Nh-O6b" id="N00-3T-bLz"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Tv Show" id="Raj-KT-pas"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="enV-9j-AqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1678" y="-958"/>
-        </scene>
-        <!--Tv Show-->
-        <scene sceneID="1Sf-yh-Kty">
-            <objects>
-                <navigationController id="XBw-Uh-VQZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tv Show" image="IconSmallTvShow.png" id="Pej-zc-7f3"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9qZ-dR-C5I">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Uc4-Nh-O6b" kind="relationship" relationship="rootViewController" id="59P-ab-7U1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XCh-2s-8XY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1140" y="-958"/>
-        </scene>
         <!--Movie Collection View Controller-->
         <scene sceneID="IaE-CG-59x">
             <objects>
@@ -370,7 +334,7 @@
         <!--Movies-->
         <scene sceneID="jTv-6J-xeG">
             <objects>
-                <navigationController storyboardIdentifier="MoviesNaviagationController" automaticallyAdjustsScrollViewInsets="NO" id="v9s-OC-xST" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MoviesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="v9s-OC-xST" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Movies" image="Icon-Small_video.png" id="BRs-su-Yv2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Osd-9X-7qj">
@@ -384,32 +348,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPR-yM-6UO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1206" y="279"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="iOd-zL-SaT">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1zZ-xg-jHB" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="MXS-Kn-hRR">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="v9s-OC-xST" kind="relationship" relationship="viewControllers" id="qo7-SN-9rr"/>
-                        <segue destination="XBw-Uh-VQZ" kind="relationship" relationship="viewControllers" id="toC-Qz-hX4"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CEJ-XC-Fgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="618" y="-131"/>
+            <point key="canvasLocation" x="1206" y="278.99999999999994"/>
         </scene>
     </scenes>
     <resources>
         <image name="Icon-40.png" width="40" height="40"/>
         <image name="Icon-Small_video.png" width="29" height="29"/>
         <image name="IconCollectionView.png" width="40" height="40"/>
-        <image name="IconSmallTvShow.png" width="40" height="40"/>
         <image name="IconStarRating.png" width="40" height="40"/>
         <image name="IconnumberOfview.png" width="40" height="40"/>
     </resources>

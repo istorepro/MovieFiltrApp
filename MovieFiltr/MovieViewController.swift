@@ -24,25 +24,44 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
     var filter: [NSDictionary]?
     var endPoint : String! = "top_rated"
     var apiKeyForMovieDataBase = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
+    var secondEndPoint : String!
+    var headTitle : [String] = ["Movies","Tv Shows"]
     
+    @IBOutlet weak var buttonA: UIButton!
+    @IBOutlet weak var buttonB: UIButton!
+    @IBOutlet weak var buttonC: UIButton!
     
     @IBOutlet weak var resultsLabel: UILabel!
     @IBOutlet weak var filterView: UIView!
 
        override func viewDidLoad() {
-        super.viewDidLoad()
+         super.viewDidLoad()
         
      //hide the view display by the filter
        self.filterView.alpha = 0
        
-      
+    
+     
+        
+        
         
         //set view of the navigaiton controller
        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:
             .Plain, target: nil, action: nil)
        
-        title = "Movies"
-        
+       // title = "Movies"
+        if(self.secondEndPoint == "movie"){
+            
+          title = self.headTitle[0]
+        }
+        else{
+            
+            
+            title = self.headTitle[1]
+    
+                
+
+        }
         
         
         tableView.dataSource = self
@@ -221,6 +240,9 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
                     let destinationViewController = segue.destinationViewController as! MovieCollectionViewController
                     //pass only the book class
                     destinationViewController.moviesC = self.movies
+                destinationViewController.SecondEndPoint = self.secondEndPoint
+                
+                 destinationViewController.hidesBottomBarWhenPushed = true
             
         }
         
@@ -246,33 +268,68 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     
-    @IBAction func showTopRatedMovies(sender: AnyObject) {
+    @IBAction func showButtonA(sender: AnyObject) {
         
        self.filterView.alpha = 0
-        labelfiltertypeOfMovie.text = "Top Rated"
-        endPoint = "top_rated"
-        CallApi()
+      
+        if(self.secondEndPoint == "movie"){
+            
+            labelfiltertypeOfMovie.text = "Now playing"
+            endPoint = "now_playing"
+        }
+        
+        if(self.secondEndPoint == "tv"){
+            
+            labelfiltertypeOfMovie.text = "On Air"
+            endPoint = "on_the_air"
+        }
+        
+                CallApi()
         tableView.reloadData()
         
     }
     
-    @IBAction func showNowPlaying(sender: AnyObject) {
+    @IBAction func showButtonB(sender: AnyObject) {
         
         self.filterView.alpha = 0
-        labelfiltertypeOfMovie.text = "Now playing"
-        endPoint = "now_playing"
+        if(self.secondEndPoint == "movie"){
+            
+            labelfiltertypeOfMovie.text = "Top Rated"
+            endPoint = "top_rated"
+        }
+
+        if(self.secondEndPoint == "tv"){
+            
+            labelfiltertypeOfMovie.text = "Top Rated"
+            endPoint = "top_rated"
+        }
+
+
+       
         CallApi()
         tableView.reloadData()
         
     }
 
    
-    @IBAction func showUpcomingMovies(sender: AnyObject) {
+    @IBAction func showButtonC(sender: AnyObject) {
        
         self.filterView.alpha = 0
-        labelfiltertypeOfMovie.text = "Up Coming"
-        endPoint = "upcoming"
-        CallApi()
+        
+        if(self.secondEndPoint == "movie"){
+            
+            labelfiltertypeOfMovie.text = "Up Coming"
+            endPoint = "upcoming"
+        }
+
+        
+        
+        if(self.secondEndPoint == "tv"){
+            
+            labelfiltertypeOfMovie.text = "Popular"
+            endPoint = "popular"
+        }
+               CallApi()
         tableView.reloadData()
 }
     
@@ -303,7 +360,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
         //        let url = NSURL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
-        let url = NSURL(string:"https://api.themoviedb.org/3/movie/\(endPoint)?api_key=\(apiKey)")
+        let url = NSURL(string:"https://api.themoviedb.org/3/\(secondEndPoint)/\(endPoint)?api_key=\(apiKey)")
         
         let request = NSURLRequest(URL: url!)
         let session = NSURLSession(
@@ -324,6 +381,18 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
                           //  self.filter = self.movies
                             self.LoadedMovies = []
                             self.searchResults = []
+                            
+                            
+                            
+                            
+                            if(self.secondEndPoint == "movie"){
+                            
+                                
+                                self.buttonA.setTitle("Now Playing", forState: UIControlState.Normal)
+                                self.buttonB.setTitle("Top Rated", forState: UIControlState.Normal)
+                                self.buttonC.setTitle("Up Coming", forState: UIControlState.Normal)
+                                
+                                
                             // itterate throught the dictionary and set load Movies
                             for (var i = 0; i < self.movies?.count;i++){
                                 
@@ -339,7 +408,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
                                 }
 
                                 
-                                
+                          
                                 
                                 
                                 
@@ -350,7 +419,42 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
                                 
                                 
                             }
-                            
+                                
+                }
+            if(self.secondEndPoint == "tv"){
+                
+                
+                 self.title = self.headTitle[1]
+                
+                self.buttonA.setTitle("On Air", forState: UIControlState.Normal)
+                self.buttonB.setTitle("Top Rated", forState: UIControlState.Normal)
+                self.buttonC.setTitle("Popular", forState: UIControlState.Normal)
+                
+                
+                // itterate throught the dictionary and set load Movies
+                for (var i = 0; i < self.movies?.count;i++){
+                    
+                    var dumy = ""
+                    if let posterPath = self.movies![i]["poster_path"] as? String {
+                        
+                        dumy = self.movies![i]["poster_path"] as! String
+                    }
+                    else {
+                        // No poster image. Can either set to nil (no image) or a default movie poster image
+                        // that you include as an asset
+                        dumy = "none"
+                    }
+
+                
+                
+                 self.LoadedMovies.append(Movie(title: self.movies![i]["name"] as! String, overview: self.movies![i]["overview"] as! String, imageCell: dumy,releaseDate: self.movies![i]["first_air_date"] as! String, numberOfView : self.movies![i]["popularity"] as! Double, Rating : self.movies![i]["vote_average"] as! Double))
+                    
+                    
+                     self.searchResults.append(Movie(title: self.movies![i]["name"] as! String, overview: self.movies![i]["overview"] as! String, imageCell: dumy, releaseDate: self.movies![i]["first_air_date"] as! String, numberOfView : self.movies![i]["popularity"] as! Double, Rating : self.movies![i]["vote_average"] as! Double))
+                
+                
+                            }
+                    }
                             
                             self.tableView.reloadData()
                             
@@ -360,6 +464,8 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
         });
         task.resume()
+                
+        
 
  
     }
